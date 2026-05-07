@@ -7,8 +7,8 @@ defaultContentLanguage = 'ar'
 theme = [
   "github.com/Gaber-Foundation/gaber-foundation.github.io",
 ] # edit this if you'ld rather use a fork of this repo
-# theme = "newsroom"
-author = "Gaber-Foundation"
+# theme = "foundation"
+author = "foundation"
 [params]
     mainSections = ["post", "posts"]
     blogDir = "posts"
