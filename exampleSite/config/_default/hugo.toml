@@ -1,19 +1,27 @@
-baseurl = "https://example.com/" # Include trailing slash
-title = "Newsroom"
-# this example loads the theme as hugo module
-# comment out line below, and uncomment the line after it if you prefer to load the theme normally
-theme = [
-  "github.com/onweru/newsroom",
-] # edit this if you'ld rather use a fork of this repo
-# theme = "newsroom"
-author = "Weru"
+baseurl = "https://gaber-foundation.github.io/" # الرابط الملكي بتاعك
+title = "مؤسسة جابر للبحث والتحقيق"
+theme = "newsroom" # عشان إنتِ عملتي Fork للمستودع ده
+author = "فاطمة سعيد جابر"
+
+[params]
+  description = "مؤسسة استقصائية لكشف الحقائق ورد المظالم"
+  mainSections = ["posts", "pages"]
+  # هنا نقدر نضبط اتجاه الكتابة للعربي
+  languageName = "Arabic"
+  contentDir = "content"
+  defaultContentLanguage = "ar"
+
 [pagination]
-disableAliases = false
-pagerSize = 10
-path = 'page'
+  disableAliases = false
+  pagerSize = 10
+  path = 'page'
 
 [permalinks]
-pages = ':contentbasename/'
+  pages = ':contentbasename/'
 
-# If you want to use disqus, uncomment the line below
-# disqusShortname = "yourdiscussshortname"
+# لغة الموقع الأساسية عربي
+[languages]
+  [languages.ar]
+    languageCode = "ar"
+    contentDir = "content"
+    weight = 1
