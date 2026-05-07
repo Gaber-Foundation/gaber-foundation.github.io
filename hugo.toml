@@ -1,9 +1,23 @@
+# الإعدادات العامة للموقع
 baseURL = 'https://gaber-foundation.github.io/'
 title = 'مؤسسة جابر للبحث والتحقيق'
-theme = 'newsroom'
+theme = ["github.com/onweru/newsroom"]
 defaultContentLanguage = 'ar'
 
-# إجبار Hugo على الاعتراف بالمجلدات اللي بتبدأ بـ _
+# إعدادات الأقسام الرئيسية والمحتوى
+[params]
+    mainSections = ["post", "posts"]
+    blogDir = "posts"
+    description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
+
+# إعدادات اللغة العربية والـ RTL
+[languages.ar]
+    contentDir = 'content'
+    languageName = 'العربية'
+    weight = 1
+    languagedirection = 'rtl'
+
+# توجيه المسارات للمجلدات التي تبدأ بـ _
 [[module.mounts]]
     source = 'layouts'
     target = 'layouts'
@@ -16,10 +30,6 @@ defaultContentLanguage = 'ar'
     source = 'layouts/_shortcodes'
     target = 'layouts/shortcodes'
 
-[languages.ar]
-    languageName = 'العربية'
-    languagedirection = 'rtl'
-    contentDir = 'content'
-
-[params]
-    description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
+[[module.mounts]]
+    source = 'assets'
+    target = 'assets'
