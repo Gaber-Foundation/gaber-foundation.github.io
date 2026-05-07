@@ -2,7 +2,7 @@ baseURL = "https://gaber-foundation.github.io/"
 title = "مؤسسة جابر للبحث والتحقيق"
 defaultContentLanguage = 'ar'
 
-# استيراد الثيم كموديول بشكل صحيح
+# الطريقة الصحيحة لاستدعاء القالب كـ Module
 [module]
   [[module.imports]]
     path = "github.com/onweru/newsroom"
@@ -14,13 +14,6 @@ defaultContentLanguage = 'ar'
 
 [languages.ar]
     contentDir = 'content'
-    label = 'العربية'       # التعديل الجديد
+    label = 'العربية'       # بدل languageName (عشان الـ WARN يختفي)
     weight = 1
-    direction = 'rtl'   # التعديل الجديد
-
-
-[permalinks]
-pages = ':contentbasename/'
-
-# If you want to use disqus, uncomment the line below
-# disqusShortname = "yourdiscussshortname"
+    direction = 'rtl'   # بدل languageDirection (عشان الـ WARN يختفي)
