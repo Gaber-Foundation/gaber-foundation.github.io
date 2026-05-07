@@ -1,13 +1,3 @@
-{{ define "main" }}
-   {{ .Content }}
-   <div class="posts-list">
-     {{ range .Paginator.Pages }}
-       {{ .Render "summary" }}
-     {{ end }}
-   </div>
-{{ end }}
-
-
 
 {{ define "main" }}
 {{- $config := site.Params }}
