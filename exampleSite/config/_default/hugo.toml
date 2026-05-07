@@ -1,27 +1,39 @@
-baseurl = "https://gaber-foundation.github.io/" # الرابط الملكي بتاعك
+# الإعدادات الأساسية
+baseURL = "https://gaber-foundation.github.io/"
 title = "مؤسسة جابر للبحث والتحقيق"
-theme = "newsroom" # عشان إنتِ عملتي Fork للمستودع ده
+theme = ["github.com/onweru/newsroom"]
 author = "فاطمة سعيد جابر"
-
-[params]
-  description = "مؤسسة استقصائية لكشف الحقائق ورد المظالم"
-  mainSections = ["posts", "pages"]
-  # هنا نقدر نضبط اتجاه الكتابة للعربي
-  languageName = "Arabic"
-  contentDir = "content"
-  defaultContentLanguage = "ar"
+defaultContentLanguage = 'ar'
 
 [pagination]
-  disableAliases = false
-  pagerSize = 10
-  path = 'page'
+disableAliases = false
+pagerSize = 10
+path = 'page'
 
-[permalinks]
-  pages = ':contentbasename/'
+[params]
+    description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
+    mainSections = ["post", "posts"]
+    blogDir = "posts"
 
-# لغة الموقع الأساسية عربي
-[languages]
-  [languages.ar]
-    languageCode = "ar"
-    contentDir = "content"
+[languages.ar]
+    contentDir = 'content'
+    languageName = 'العربية'
     weight = 1
+    languagedirection = 'rtl'
+
+# السحر هنا: ربط المجلدات اللي بتبدأ بـ (_) بالمسارات اللي Hugo بيفهمها
+[[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+
+[[module.mounts]]
+    source = 'layouts/_partials'
+    target = 'layouts/partials'
+
+[[module.mounts]]
+    source = 'layouts/_shortcodes'
+    target = 'layouts/shortcodes'
+
+[[module.mounts]]
+    source = 'assets'
+    target = 'assets'
