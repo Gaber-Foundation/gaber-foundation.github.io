@@ -3,8 +3,19 @@ title = 'مؤسسة جابر للبحث والتحقيق'
 theme = 'newsroom'
 defaultContentLanguage = 'ar'
 
+# أخبر هوجو أن مجلد _partials هو مكان الـ partials الرسمي
+[[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+
+[[module.mounts]]
+    source = 'layouts/_partials'
+    target = 'layouts/partials'
+
 [languages.ar]
     languageName = 'العربية'
     languagedirection = 'rtl'
-    title = 'مؤسسة جابر للبحث والتحقيق'
     contentDir = 'content'
+
+[params]
+    description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
