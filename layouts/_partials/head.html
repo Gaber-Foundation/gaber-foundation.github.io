@@ -10,4 +10,31 @@
   {{- partial "opengraph" . }}
   {{- partialCached "favicon" . }}
   {{- partialCached "styles" . }}
+  <script>
+  // قلب هوية الموقع للعربية واليمين
+  document.documentElement.lang = "ar";
+  document.documentElement.dir = "rtl";
+</script>
+
+<style>
+  /* إجبار الاتجاه يمين في كل الموقع */
+  body {
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  /* تنسيق الهيدر: اللوجو يمين والمنيو شمال */
+  header .container {
+    display: flex !important;
+    flex-direction: row !important; /* الهوية بقت RTL فـ Row بتبدأ يمين */
+    justify-content: space-between !important;
+  }
+
+  /* القائمة المنسدلة تفتح من اليمين */
+  .nav-menu, .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+    text-align: right !important;
+  }
+</style>
 </head>
