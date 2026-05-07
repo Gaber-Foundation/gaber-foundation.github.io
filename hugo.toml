@@ -1,0 +1,14 @@
+baseURL = 'https://gaber-foundation.github.io/'
+languageCode = 'ar'
+title = 'مؤسسة جابر للبحث والتحقيق'
+theme = 'newsroom'
+
+[params]
+    description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
+    author = "فاطمة سعيد جابر"
+
+[menu]
+  [[menu.main]]
+    name = "الرئيسية"
+    url = "/"
+    weight = 1
