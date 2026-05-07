@@ -12,8 +12,7 @@ path = 'page'
 
 [params]
     description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
-    mainSections = ["post", "posts"]
-    blogDir = "posts"
+
 
 [languages.ar]
     contentDir = 'content'
@@ -21,19 +20,9 @@ path = 'page'
     weight = 1
     languagedirection = 'rtl'
 
-# السحر هنا: ربط المجلدات اللي بتبدأ بـ (_) بالمسارات اللي Hugo بيفهمها
-[[module.mounts]]
-    source = 'layouts'
-    target = 'layouts'
 
-[[module.mounts]]
-    source = 'layouts/_partials'
-    target = 'layouts/partials'
+[permalinks]
+pages = ':contentbasename/'
 
-[[module.mounts]]
-    source = 'layouts/_shortcodes'
-    target = 'layouts/shortcodes'
-
-[[module.mounts]]
-    source = 'assets'
-    target = 'assets'
+# If you want to use disqus, uncomment the line below
+# disqusShortname = "yourdiscussshortname"
