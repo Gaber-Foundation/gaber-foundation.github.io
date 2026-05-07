@@ -1,7 +1,13 @@
 baseURL = 'https://gaber-foundation.github.io/'
-languageCode = 'ar'
 title = 'مؤسسة جابر للبحث والتحقيق'
 theme = 'newsroom'
+defaultContentLanguage = 'ar'
+
+[languages.ar]
+    languagedirection = 'rtl'
+    contentDir = 'content'
+    languageName = 'العربية'
+    title = 'مؤسسة جابر للبحث والتحقيق'
 
 [params]
     description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
