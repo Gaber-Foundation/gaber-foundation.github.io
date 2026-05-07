@@ -1,24 +1,22 @@
-# الإعدادات الأساسية
 baseURL = "https://gaber-foundation.github.io/"
 title = "مؤسسة جابر للبحث والتحقيق"
-theme = ["github.com/onweru/newsroom"]
-author = "فاطمة سعيد جابر"
 defaultContentLanguage = 'ar'
 
-[pagination]
-disableAliases = false
-pagerSize = 10
-path = 'page'
+# استيراد الثيم كموديول بشكل صحيح
+[module]
+  [[module.imports]]
+    path = "github.com/onweru/newsroom"
 
 [params]
+    mainSections = ["post", "posts"]
+    blogDir = "posts"
     description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
-
 
 [languages.ar]
     contentDir = 'content'
-    languageName = 'العربية'
+    label = 'العربية'       # التعديل الجديد
     weight = 1
-    languagedirection = 'rtl'
+    direction = 'rtl'   # التعديل الجديد
 
 
 [permalinks]
