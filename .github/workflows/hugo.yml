@@ -1,30 +1,43 @@
-baseURL = 'https://gaber-foundation.github.io/'
-title = 'مؤسسة جابر للبحث والتحقيق'
-theme = 'newsroom'
-
-# إعدادات اللغة العربية والـ RTL
-defaultContentLanguage = 'ar'
-languageCode = 'ar'
-
-[languages]
-  [languages.ar]
-    languageName = 'العربية'
-    contentDir = 'content'
-    weight = 1
-    languagedirection = 'rtl' # هنا السحر اللي هيقلب الموقع يمين
-
-[params]
-    description = "مؤسسة صحفية استقصائية - كشف الحقائق ونصرة المظلوم"
-    author = "فاطمة سعيد جابر"
-    # لو عندك صفحة فيسبوك حطي الرابط هنا
-    facebook = "https://facebook.com/GaberFoundation" 
-
-[menu]
-  [[menu.main]]
-    name = "الرئيسية"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "عن المؤسسة"
-    url = "/about"
-    weight = 2
+name: Deploy Hugo site to Pages
+on:
+  push:
+    branches: ["master"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+      - name: Force Fetch Theme
+        run: |
+          mkdir -p themes
+          rm -rf themes/newsroom
+          git clone https://github.com/onweru/newsroom.git themes/newsroom
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+      - name: Build
+        run: hugo --minify
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
