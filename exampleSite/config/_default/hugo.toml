@@ -3,10 +3,12 @@ title = "مؤسسة جابر للبحث والتحقيق"
 defaultContentLanguage = 'ar'
 
 # الطريقة الصحيحة لاستدعاء القالب كـ Module
-[module]
-  [[module.imports]]
-    path = "github.com/onweru/newsroom"
 
+theme = [
+  "github.com/Gaber-Foundation/gaber-foundation.github.io",
+] # edit this if you'ld rather use a fork of this repo
+# theme = "newsroom"
+author = "Gaber-Foundation"
 [params]
     mainSections = ["post", "posts"]
     blogDir = "posts"
