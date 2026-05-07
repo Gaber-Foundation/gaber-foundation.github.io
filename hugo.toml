@@ -3,7 +3,7 @@ title = 'مؤسسة جابر للبحث والتحقيق'
 theme = 'newsroom'
 defaultContentLanguage = 'ar'
 
-# أخبر هوجو أن مجلد _partials هو مكان الـ partials الرسمي
+# إجبار Hugo على الاعتراف بالمجلدات اللي بتبدأ بـ _
 [[module.mounts]]
     source = 'layouts'
     target = 'layouts'
@@ -11,6 +11,10 @@ defaultContentLanguage = 'ar'
 [[module.mounts]]
     source = 'layouts/_partials'
     target = 'layouts/partials'
+
+[[module.mounts]]
+    source = 'layouts/_shortcodes'
+    target = 'layouts/shortcodes'
 
 [languages.ar]
     languageName = 'العربية'
